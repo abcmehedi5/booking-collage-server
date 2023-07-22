@@ -1,5 +1,5 @@
 [
-    {
+    { "_id":"3434234",
       "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
       "college_name": "Example University 1",
       "admission_dates": "August 2023",
@@ -15,7 +15,7 @@
         "Swimming"
       ]
     },
-    {
+    { "_id":"3436434",
       "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
       "college_name": "Sample College 2",
       "admission_dates": "September 2023",
@@ -31,7 +31,7 @@
         "Volleyball"
       ]
     },
-    {
+    { "_id":"3434934",
       "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
       "college_name": "Test Institute 3",
       "admission_dates": "October 2023",
@@ -45,6 +45,23 @@
         "Cricket",
         "Badminton",
         "Athletics"
+      ]
+    },
+
+    { "_id":"34334234234",
+      "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
+      "college_name": "Example University 1",
+      "admission_dates": "August 2023",
+      "events": [
+        "Orientation Day - September 1, 2023",
+        "Career Fair - October 15, 2023",
+        "Homecoming Weekend - November 5-7, 2023"
+      ],
+      "research_history": "Founded in 1850, Example University 1 has a rich history of groundbreaking research in various fields, including physics, medicine, and computer science.",
+      "sports": [
+        "Basketball",
+        "Soccer",
+        "Swimming"
       ]
     }
   ]

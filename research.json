@@ -1,0 +1,33 @@
+[
+    {
+      "title": "A Study on Renewable Energy Sources",
+      "author": "John Smith",
+      "publication_year": "2023",
+      "link": "https://example.com/research_paper_1.pdf"
+    },
+    {
+      "title": "Artificial Intelligence and Its Impact on Society",
+      "author": "Emily Johnson",
+      "publication_year": "2022",
+      "link": "https://example.com/research_paper_2.pdf"
+    },
+    {
+      "title": "Climate Change and its Effects on Biodiversity",
+      "author": "Michael Williams",
+      "publication_year": "2021",
+      "link": "https://example.com/research_paper_3.pdf"
+    },
+    {
+      "title": "Advancements in Nanotechnology",
+      "author": "Sarah Davis",
+      "publication_year": "2023",
+      "link": "https://example.com/research_paper_4.pdf"
+    },
+    {
+      "title": "The Future of Space Exploration",
+      "author": "David Wilson",
+      "publication_year": "2022",
+      "link": "https://example.com/research_paper_5.pdf"
+    }
+  ]
+  

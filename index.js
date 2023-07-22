@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const cors = require("cors");
 const CollageDataq = require("./collage.json");
+const Research = require("./research.json");
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -16,6 +17,9 @@ app.get("/", (req, res) => {
 
 app.get("/collage", (req, res) => {
   res.send(CollageDataq);
+});
+app.get("/research", (req, res) => {
+  res.send(Research);
 });
 
 app.listen(port, () => {
