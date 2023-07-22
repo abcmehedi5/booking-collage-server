@@ -1,0 +1,34 @@
+[
+    {
+      "_id":"3434123234",
+      "college_name":"abc collage",
+      "userName": "Robert Martinez",
+      "userAvatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+      "date": "January 15, 2024",
+      "comment": "The career services team helped me secure a fantastic internship."
+    },
+    {
+      "_id":"343445234",
+      "college_name":"abc collage",
+      "userName": "Olivia Johnson",
+      "userAvatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+      "date": "February 3, 2024",
+      "comment": "The dorms are comfortable and the campus is safe."
+    },
+    {
+        "_id":"3434233334",
+        "college_name":"abc collage",
+        "userName": "William Anderson",
+        "userAvatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+        "date": "March 18, 2024",
+        "comment": "The computer labs are well-equipped and accessible."
+      },
+      {
+        "_id":"343456234",
+        "college_name":"abc collage",
+        "userName": "Ava Thompson",
+        "userAvatar": "https://static.vecteezy.com/system/resources/thumbnails/001/993/889/small/beautiful-latin-woman-avatar-character-icon-free-vector.jpg",
+        "date": "April 5, 2024",
+        "comment": "I made lifelong friends during my time here."
+      }
+  ]

@@ -4,6 +4,7 @@ require("dotenv").config();
 const cors = require("cors");
 const CollageDataq = require("./collage.json");
 const Research = require("./research.json");
+const Review = require("./review.json");
 const port = process.env.PORT || 5000;
 
 app.use(cors());
@@ -15,11 +16,18 @@ app.get("/", (req, res) => {
 
 // all api routes
 
+// collage -------------------
 app.get("/collage", (req, res) => {
   res.send(CollageDataq);
 });
+
+// /research------------------
 app.get("/research", (req, res) => {
   res.send(Research);
+});
+// review----------------------
+app.get("/review", (req, res) => {
+  res.send(Review);
 });
 
 app.listen(port, () => {
