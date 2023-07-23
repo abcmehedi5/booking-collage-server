@@ -66,8 +66,18 @@ async function run() {
     });
 
     // admission ------------------
-    app.post("/admission", (req, res) => {
-      console.log(req.body);
+    app.post("/admission", async (req, res) => {
+      const admissionData = req.body;
+      try {
+        const result = await admissionCollection.insertOne(admissionData);
+        res.status(200).json({
+          error: false,
+          data: result,
+          message: "Admission successfull",
+        });
+      } catch (error) {
+        res.status(500).json({ error: true, message: error.message });
+      }
     });
 
     app.get("/admission", async (req, res) => {
