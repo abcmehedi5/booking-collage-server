@@ -61,8 +61,23 @@ async function run() {
       res.send(Research);
     });
     // review----------------------
-    app.get("/review", (req, res) => {
-      res.send(Review);
+
+    app.post("/review", async (req, res) => {
+      const reviewData = req.body;
+      console.log(reviewData);
+      try {
+        const result = await reviewCollection.insertOne(reviewData);
+        res.status(200).send(result);
+      } catch (error) {
+        res.status(500).json({ error: true, message: error.message });
+      }
+    });
+    app.get("/review", async (req, res) => {
+      try {
+        const result = await reviewCollection.find().toArray();
+        res.send(result);
+      } catch (error) {}
+      // res.send(Review);
     });
 
     // admission ------------------
