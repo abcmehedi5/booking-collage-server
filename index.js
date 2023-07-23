@@ -71,8 +71,9 @@ async function run() {
     });
 
     app.get("/admission", async (req, res) => {
+      const email = req.query.email;
       try {
-        const result = await admissionCollection.find().toArray();
+        const result = await admissionCollection.find({ email }).toArray();
         res.send(result);
       } catch (error) {
         res.status(500).json({ error: true, message: error.message });
@@ -81,9 +82,10 @@ async function run() {
 
     app.get("/admission-college/:id", async (req, res) => {
       const id = req.params.id;
+      console.log(id);
       const query = { _id: new ObjectId(id) };
       try {
-        const result = await admissionCollection.find(query).toArray();
+        const result = await collegeCollection.findOne(query);
         res.send(result);
       } catch (error) {
         res.status(500).json({ error: true, message: error.message });
