@@ -116,6 +116,32 @@ async function run() {
         res.status(500).json({ error: true, message: error.message });
       }
     });
+
+    //  admission information update
+
+    app.patch("/admission/:id", async (req, res) => {
+      const id = req.params.id;
+      const { candidateName, address, college_name } = req.body;
+      const filter = { _id: new ObjectId(id) };
+      const options = { upsert: true };
+      const updateData = {
+        $set: {
+          candidateName: candidateName,
+          address: address,
+          college_name: college_name,
+        },
+      };
+      try {
+        const result = await admissionCollection.updateOne(
+          filter,
+          updateData,
+          options
+        );
+        res.status(200).send(result);
+      } catch (error) {
+        res.status(500).send(error);
+      }
+    });
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
