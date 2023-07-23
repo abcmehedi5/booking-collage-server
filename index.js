@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const cors = require("cors");
-const CollageDataq = require("./collage.json");
+const Colleges = require("./collage.json");
 const Research = require("./research.json");
 const Review = require("./review.json");
+const admissionData = require("./admissionData.json");
 const port = process.env.PORT || 5000;
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 app.use(cors());
 app.use(express.json());
@@ -14,22 +16,86 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-// all api routes
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.13ytubh.mongodb.net/?retryWrites=true&w=majority`;
 
-// collage -------------------
-app.get("/collage", (req, res) => {
-  res.send(CollageDataq);
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  },
 });
 
-// /research------------------
-app.get("/research", (req, res) => {
-  res.send(Research);
-});
-// review----------------------
-app.get("/review", (req, res) => {
-  res.send(Review);
-});
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+
+    const db = client.db("booking-college");
+    const reviewCollection = db.collection("review");
+    const admissionCollection = db.collection("admission");
+    const collegeCollection = db.collection("college");
+
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+
+    // all api routes
+
+    // collage -------------------
+    app.get("/collage", async (req, res) => {
+      try {
+        const result = await collegeCollection.find().toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(500).json({ error: true, message: error.message });
+      }
+      // res.send(Colleges);
+    });
+
+    // /research------------------
+    app.get("/research", (req, res) => {
+      res.send(Research);
+    });
+    // review----------------------
+    app.get("/review", (req, res) => {
+      res.send(Review);
+    });
+
+    // admission ------------------
+    app.post("/admission", (req, res) => {
+      console.log(req.body);
+    });
+
+    app.get("/admission", async (req, res) => {
+      try {
+        const result = await admissionCollection.find().toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(500).json({ error: true, message: error.message });
+      }
+    });
+
+    app.get("/admission-college/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id) };
+      try {
+        const result = await admissionCollection.find(query).toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(500).json({ error: true, message: error.message });
+      }
+    });
+  } finally {
+    // Ensures that the client will close when you finish/error
+    // await client.close();
+  }
+}
+run().catch(console.dir);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Booking collage app listening on port ${port}`);
 });

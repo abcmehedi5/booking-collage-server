@@ -1,0 +1,56 @@
+[
+    {
+      "_id": "1",
+      "email":"abcmehedi5@gmail.com",
+      "collegeId":"3434234",
+      "college_name": "Example University 1",
+      "candidateName": "John Doe",
+      "subject": "Computer Science",
+      "candidatePhone": "1234567890",
+      "address": "123 Main Street, City",
+      "dateOfBirth": "1990-05-15",
+      "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
+      "collegeImage": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg"
+     
+    },
+    {
+      "_id": "2",
+      "email":"abcmehedi5@gmail.com",
+      "collegeId":"3434234",
+      "college_name": "Example University 1",
+      "candidateName": "Jane Smith",
+      "subject": "Electrical Engineering",
+      "candidatePhone": "9876543210",
+      "address": "456 Park Avenue, Town",
+      "dateOfBirth": "1988-12-03",
+      "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
+      "collegeImage": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg"
+    },
+    {
+      "_id": "3",
+      "email":"abcmehedi5@gmail.com",
+      "collegeId":"3434234",
+      "college_name": "Example University 1",
+      "candidateName": "Bob Johnson",
+      "subject": "Mathematics",
+      "candidatePhone": "5555555555",
+      "address": "789 Maple Road, Village",
+      "dateOfBirth": "1995-08-22",
+      "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
+      "collegeImage": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg"
+    },
+    {
+      "_id": "4",
+      "email":"abcmehedi5@gmail.com",
+      "collegeId":"3434234",
+      "college_name": "Example University 1",
+      "candidateName": "Alice Williams",
+      "subject": "Biology",
+      "candidatePhone": "1111111111",
+      "address": "101 Oak Street, County",
+      "dateOfBirth": "1992-11-10",
+      "image": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg",
+      "collegeImage": "https://news.ua.edu/wp-content/uploads/2018/09/hewsonbhall.jpg"
+    }
+  ]
+  
