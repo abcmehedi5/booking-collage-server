@@ -46,14 +46,25 @@ async function run() {
     // all api routes
 
     // collage -------------------
+    // app.get("/collage", async (req, res) => {
+    //   try {
+    //     const result = await collegeCollection.find().toArray();
+    //     res.send(result);
+    //   } catch (error) {
+    //     res.status(500).json({ error: true, message: error.message });
+    //   }
+    //   // res.send(Colleges);
+    // });
+
     app.get("/collage", async (req, res) => {
+      const search = req.query.search;
+      const query = { college_name: { $regex: search, $options: "i" } };
       try {
         const result = await collegeCollection.find().toArray();
         res.send(result);
       } catch (error) {
         res.status(500).json({ error: true, message: error.message });
       }
-      // res.send(Colleges);
     });
 
     // /research------------------
